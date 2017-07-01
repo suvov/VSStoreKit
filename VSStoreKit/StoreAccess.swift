@@ -10,14 +10,25 @@ import Foundation
 import StoreKit
 
 
+public extension Notification.Name {
+    
+    public static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
+}
+
 public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     public typealias PurchaseCompletionHandler = (_ purchasedProductIdentifier: String) -> ()
-    
-    fileprivate var products: [SKProduct]?
-    
+
     public var purchaseCompletion: PurchaseCompletionHandler?
     
+    public fileprivate(set) var state: StoreAccessState = .unknown {
+        didSet {
+            NotificationCenter.default.post(name: .storeAccessDidUpdateState, object: self)
+        }
+    }
+    
+    fileprivate var products: [SKProduct]?
+
     
     // MARK:
     public class var shared: StoreAccess {
@@ -35,11 +46,11 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     // MARK: SKProductsRequestDelegate
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         products = response.products
-        NotificationCenter.default.post(name: .storeAccessReceivedProducts, object: self)
+        state = .receivedProducts
     }
     
     public func request(_ request: SKRequest, didFailWithError error: Error) {
-        NotificationCenter.default.post(name: .storeAccessRequestFailed, object: self)
+        state = .requestForProductsFailed(error)
         print("*** Error loading products \(error)")
     }
     
@@ -48,17 +59,18 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
+                state = .purchased
                 completePurchaseForTransaction(transaction)
-                NotificationCenter.default.post(name: .storeAccessDidPurchase, object: self)
             case .restored:
+                state = .restored
                 completePurchaseForTransaction(transaction)
-                NotificationCenter.default.post(name: .storeAccessDidRestorePurchases, object: self)
             case .failed:
-                failedTransaction(transaction)
+                state = .purchaseFailed(transaction.error as? SKError)
+                SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred:
-                NotificationCenter.default.post(name: .storeAccessTransactionDeferred, object: self)
+                state = .transactionDeferred
             case .purchasing:
-                NotificationCenter.default.post(name: .storeAccessPurchasing, object: self)
+                state = .purchasing
             }
         }
     }
@@ -66,21 +78,13 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     // MARK: Helpers
     private func completePurchaseForTransaction(_ transaction: SKPaymentTransaction) {
         SKPaymentQueue.default().finishTransaction(transaction)
-        let identifier = transaction.payment.productIdentifier
-        markFinishedTransactionForProductWithIdentifier(identifier)
+        markFinishedTransactionForProductWithIdentifier(transaction.payment.productIdentifier)
     }
     
     private func markFinishedTransactionForProductWithIdentifier(_ identifier: String) {
         if let completion = purchaseCompletion {
             completion(identifier)
         } 
-    }
-    
-    private func failedTransaction(_ transaction: SKPaymentTransaction) {
-        SKPaymentQueue.default().finishTransaction(transaction)
-        if let error = transaction.error as? SKError {
-            NotificationCenter.default.post(name: .storeAccessDidFailPurchasing, object: self, userInfo: [StoreAccess.storeAccessDidFailPurchasingSKErrorKey: error])
-        }
     }
 }
 
@@ -124,13 +128,13 @@ extension StoreAccess: StoreProductsProtocol {
         assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access.")
         guard let product = productWithIdentifier(identifier) else { return }
         SKPaymentQueue.default().add(SKPayment(product: product))
-        NotificationCenter.default.post(name: .storeAccessPurchaseAttempt, object: self, userInfo: [StoreAccess.storeAccessPurchaseAttemptProductIdentifierKey: identifier])
+        state = .purchaseAttempt(identifier)
     }
     
     public func restorePurchases() {
         assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access")
-        NotificationCenter.default.post(name: .storeAccessRestoringPurchases, object: self)
         SKPaymentQueue.default().restoreCompletedTransactions()
+        state = .restoringPurchases
     }
     
     // MARK:
