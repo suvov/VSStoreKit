@@ -9,11 +9,16 @@
 import Foundation
 
 
-public enum ProductState: Int {
-    case retrieving, retrieved, purchased
+public enum ProductState {
+    
+    case retrieving
+    
+    case retrieved
+    
+    case purchased
 }
 
-open class ProductsDataSource: NSObject {
+public class ProductsDataSource {
     
     private let localProducts: LocalProductsProtocol
     private let storeProducts: StoreProductsProtocol
@@ -23,14 +28,13 @@ open class ProductsDataSource: NSObject {
         self.localProducts = localProducts
         self.storeProducts = storeProducts
         self.purchasedProducts = purchasedProducts
-        super.init()
     }
     
-    public var numProducts:Int {
+    public var numProducts: Int {
         return localProducts.productsCount
     }
     
-    public func nameForProductAtIndex(_ index: Int) -> String {
+    public func localizedNameForProductAtIndex(_ index: Int) -> String {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
         if storeProducts.productsReceived, let name = storeProducts.localizedNameForProductWithIdentifier(productIdentifier) {
             return name
@@ -39,7 +43,7 @@ open class ProductsDataSource: NSObject {
         }
     }
     
-    public func descriptionForProductAtIndex(_ index: Int) -> String {
+    public func localizedDescriptionForProductAtIndex(_ index: Int) -> String {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
         if storeProducts.productsReceived, let description = storeProducts.localizedDescriptionForProductWithIdentifier(productIdentifier) {
             return description
@@ -48,7 +52,7 @@ open class ProductsDataSource: NSObject {
         }
     }
     
-    public func priceForProductAtIndex(_ index: Int) -> String? {
+    public func localizedPriceForProductAtIndex(_ index: Int) -> String? {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
         if storeProducts.productsReceived, let price = storeProducts.localizedPriceForProductWithIdentifier(productIdentifier) {
             return price
