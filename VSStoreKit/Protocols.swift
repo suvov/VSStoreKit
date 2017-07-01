@@ -18,7 +18,7 @@ public protocol LocalProductsProtocol {
     func descriptionForProductAtIndex(_ index: Int) -> String
 }
 
-public protocol StoreProductsProtocol {
+public protocol StoreAccessProtocol {
     
     func requestProductsWithIdentifiers(_ identifiers: Set<String>)
     var productsReceived: Bool { get }

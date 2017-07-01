@@ -21,12 +21,12 @@ public enum ProductState {
 public class ProductsDataSource {
     
     private let localProducts: LocalProductsProtocol
-    private let storeProducts: StoreProductsProtocol
+    private let storeAccess: StoreAccessProtocol
     private let purchasedProducts: PurchasedProductsProtocol
     
-    public init(localProducts: LocalProductsProtocol, storeProducts: StoreProductsProtocol, purchasedProducts: PurchasedProductsProtocol) {
+    public init(localProducts: LocalProductsProtocol, storeAccess: StoreAccessProtocol, purchasedProducts: PurchasedProductsProtocol) {
         self.localProducts = localProducts
-        self.storeProducts = storeProducts
+        self.storeAccess = storeAccess
         self.purchasedProducts = purchasedProducts
     }
     
@@ -36,7 +36,7 @@ public class ProductsDataSource {
     
     public func localizedNameForProductAtIndex(_ index: Int) -> String {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
-        if storeProducts.productsReceived, let name = storeProducts.localizedNameForProductWithIdentifier(productIdentifier) {
+        if storeAccess.productsReceived, let name = storeAccess.localizedNameForProductWithIdentifier(productIdentifier) {
             return name
         } else {
             return NSLocalizedString(localProducts.nameForProductAtIndex(index), comment: "")
@@ -45,7 +45,7 @@ public class ProductsDataSource {
     
     public func localizedDescriptionForProductAtIndex(_ index: Int) -> String {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
-        if storeProducts.productsReceived, let description = storeProducts.localizedDescriptionForProductWithIdentifier(productIdentifier) {
+        if storeAccess.productsReceived, let description = storeAccess.localizedDescriptionForProductWithIdentifier(productIdentifier) {
             return description
         } else {
             return NSLocalizedString(localProducts.descriptionForProductAtIndex(index), comment: "")
@@ -54,7 +54,7 @@ public class ProductsDataSource {
     
     public func localizedPriceForProductAtIndex(_ index: Int) -> String? {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
-        if storeProducts.productsReceived, let price = storeProducts.localizedPriceForProductWithIdentifier(productIdentifier) {
+        if storeAccess.productsReceived, let price = storeAccess.localizedPriceForProductWithIdentifier(productIdentifier) {
             return price
         }
         return nil
@@ -64,7 +64,7 @@ public class ProductsDataSource {
         let productIdentifier = localProducts.identifierForProductAtIndex(index)
         if purchasedProducts.isPurchasedProductWithIdentifier(productIdentifier) {
             return .purchased
-        } else if !storeProducts.productsReceived {
+        } else if !storeAccess.productsReceived {
             return .retrieving
         } else {
             return .retrieved

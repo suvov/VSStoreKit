@@ -83,7 +83,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     }
 }
 
-extension StoreAccess: StoreProductsProtocol {
+extension StoreAccess: StoreAccessProtocol {
     
     public func requestProductsWithIdentifiers(_ identifiers: Set<String>) {
         let productRequest = SKProductsRequest(productIdentifiers: identifiers)
