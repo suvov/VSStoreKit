@@ -1,6 +1,6 @@
 //
 //  StoreAccess.swift
-//  VSStore
+//  VSStoreKit
 //
 //  Created by Vladimir Shutyuk on 10/04/2017.
 //  Copyright © 2017 Vladimir Shutyuk. All rights reserved.

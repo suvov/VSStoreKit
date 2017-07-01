@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "VSStoreKit"
-    s.version      = "0.1"
+    s.version      = "0.9"
     s.summary      = "VSStoreKit"
     s.description  = "VSStoreKit"
     s.homepage     = "http://suvov.github.io"

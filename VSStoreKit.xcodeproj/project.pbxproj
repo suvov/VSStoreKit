@@ -19,7 +19,7 @@
 		E78F5A4E1EE86E6A0065A5C5 /* ProductsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsDataSource.swift; path = VSStoreKit/ProductsDataSource.swift; sourceTree = SOURCE_ROOT; };
 		E78F5A501EE86E6A0065A5C5 /* StoreAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreAccess.swift; path = VSStoreKit/StoreAccess.swift; sourceTree = SOURCE_ROOT; };
 		E78F5A521EE86E6A0065A5C5 /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreViewController.swift; path = VSStoreKit/StoreViewController.swift; sourceTree = SOURCE_ROOT; };
-		E78F5A531EE86E6A0065A5C5 /* VSStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStore.h; path = VSStoreKit/VSStore.h; sourceTree = SOURCE_ROOT; };
+		E78F5A531EE86E6A0065A5C5 /* VSStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStoreKit.h; path = VSStoreKit/VSStoreKit.h; sourceTree = SOURCE_ROOT; };
 		E79B5BC41F07E51A00078B51 /* StoreAccessState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreAccessState.swift; path = VSStoreKit/StoreAccessState.swift; sourceTree = SOURCE_ROOT; };
 		E7A337C91EEC96F000374F77 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = VSStoreKit/Protocols.swift; sourceTree = SOURCE_ROOT; };
 		E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VSStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +62,7 @@
 				E78F5A501EE86E6A0065A5C5 /* StoreAccess.swift */,
 				E79B5BC41F07E51A00078B51 /* StoreAccessState.swift */,
 				E78F5A521EE86E6A0065A5C5 /* StoreViewController.swift */,
-				E78F5A531EE86E6A0065A5C5 /* VSStore.h */,
+				E78F5A531EE86E6A0065A5C5 /* VSStoreKit.h */,
 				E78F5A4B1EE86E6A0065A5C5 /* Info.plist */,
 			);
 			name = VSStoreKit;

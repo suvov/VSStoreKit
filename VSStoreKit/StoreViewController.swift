@@ -26,22 +26,22 @@ open class StoreViewController: UIViewController {
         let state = StoreAccess.shared.state
         switch state {
         case .receivedProducts:
-            productsReceived()
+            receivedProducts()
         case .requestForProductsFailed:
             requestForProductsFailed()
         case .purchased:
-            productPurchased()
+            purchasedProduct()
         case .restored:
-            productRestored()
+            restoredProduct()
         case .purchaseFailed:
-            productPurchaseFailed()
+            purchaseFailed()
         default:
             break
         }
     }
     
     // MARK:
-    open func productsReceived() {
+    open func receivedProducts() {
         //
     }
     
@@ -49,15 +49,15 @@ open class StoreViewController: UIViewController {
         //
     }
     
-    open func productPurchased() {
+    open func purchasedProduct() {
         //
     }
     
-    open func productRestored() {
+    open func restoredProduct() {
         //
     }
     
-    open func productPurchaseFailed() {
+    open func purchaseFailed() {
         //
     }
 }
