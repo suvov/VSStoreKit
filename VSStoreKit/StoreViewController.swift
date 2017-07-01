@@ -22,8 +22,8 @@ open class StoreViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .storeAccessDidUpdateState, object: nil)
     }
     
-    func storeAccessDidUpdateState() {
-        let state = StoreAccess.shared.state
+    func storeAccessDidUpdateState(_ notification: Notification?) {
+        guard let state = notification?.userInfo?[StoreAccessStateUserInfoKey] as? StoreAccessState else { return }
         switch state {
         case .receivedProducts:
             receivedProducts()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E74AC2621F07F6CE00FDD303 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC2611F07F6CE00FDD303 /* Notifications.swift */; };
 		E78F5A571EE86E6A0065A5C5 /* ProductsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F5A4E1EE86E6A0065A5C5 /* ProductsDataSource.swift */; };
 		E78F5A591EE86E6A0065A5C5 /* StoreAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F5A501EE86E6A0065A5C5 /* StoreAccess.swift */; };
 		E78F5A5B1EE86E6A0065A5C5 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F5A521EE86E6A0065A5C5 /* StoreViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E74AC2611F07F6CE00FDD303 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = VSStoreKit/Notifications.swift; sourceTree = SOURCE_ROOT; };
 		E78F5A4B1EE86E6A0065A5C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VSStoreKit/Info.plist; sourceTree = SOURCE_ROOT; };
 		E78F5A4E1EE86E6A0065A5C5 /* ProductsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsDataSource.swift; path = VSStoreKit/ProductsDataSource.swift; sourceTree = SOURCE_ROOT; };
 		E78F5A501EE86E6A0065A5C5 /* StoreAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreAccess.swift; path = VSStoreKit/StoreAccess.swift; sourceTree = SOURCE_ROOT; };
@@ -60,6 +62,7 @@
 				E7A337C91EEC96F000374F77 /* Protocols.swift */,
 				E78F5A4E1EE86E6A0065A5C5 /* ProductsDataSource.swift */,
 				E78F5A501EE86E6A0065A5C5 /* StoreAccess.swift */,
+				E74AC2611F07F6CE00FDD303 /* Notifications.swift */,
 				E79B5BC41F07E51A00078B51 /* StoreAccessState.swift */,
 				E78F5A521EE86E6A0065A5C5 /* StoreViewController.swift */,
 				E78F5A531EE86E6A0065A5C5 /* VSStoreKit.h */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74AC2621F07F6CE00FDD303 /* Notifications.swift in Sources */,
 				E7A337CA1EEC96F000374F77 /* Protocols.swift in Sources */,
 				E78F5A591EE86E6A0065A5C5 /* StoreAccess.swift in Sources */,
 				E79B5BC51F07E51A00078B51 /* StoreAccessState.swift in Sources */,

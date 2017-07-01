@@ -10,11 +10,6 @@ import Foundation
 import StoreKit
 
 
-public extension Notification.Name {
-    
-    public static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
-}
-
 public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     public typealias PurchaseCompletionHandler = (_ purchasedProductIdentifier: String) -> ()
@@ -23,7 +18,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     
     public fileprivate(set) var state: StoreAccessState = .unknown {
         didSet {
-            NotificationCenter.default.post(name: .storeAccessDidUpdateState, object: self)
+            NotificationCenter.default.post(name: .storeAccessDidUpdateState, object: self, userInfo: [StoreAccessStateUserInfoKey: state])
         }
     }
     
