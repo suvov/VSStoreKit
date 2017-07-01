@@ -13,7 +13,23 @@
 		E78F5A5B1EE86E6A0065A5C5 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F5A521EE86E6A0065A5C5 /* StoreViewController.swift */; };
 		E79B5BC51F07E51A00078B51 /* StoreAccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B5BC41F07E51A00078B51 /* StoreAccessState.swift */; };
 		E7A337CA1EEC96F000374F77 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A337C91EEC96F000374F77 /* Protocols.swift */; };
+		E7B49D0B1F080BC30008116E /* VSStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */; };
+		E7B49D1A1F080CEF0008116E /* TestProductsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B49D191F080CEF0008116E /* TestProductsDataSource.swift */; };
+		E7C4D3C81F082F6100737E8B /* StoreAccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */; };
+		E7C4D3CA1F082FFD00737E8B /* ProductMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3C91F082FFD00737E8B /* ProductMock.swift */; };
+		E7C4D3CC1F08304B00737E8B /* PurchasedProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */; };
+		E7C4D3CE1F08306800737E8B /* LocalProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3CD1F08306800737E8B /* LocalProducts.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7B49D0C1F080BC30008116E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7B0AD0E1E9BD8ED00C33981 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7B0AD161E9BD8ED00C33981;
+			remoteInfo = VSStoreKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E74AC2611F07F6CE00FDD303 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = VSStoreKit/Notifications.swift; sourceTree = SOURCE_ROOT; };
@@ -26,6 +42,13 @@
 		E7A337C91EEC96F000374F77 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = VSStoreKit/Protocols.swift; sourceTree = SOURCE_ROOT; };
 		E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VSStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B0AD341E9BD92900C33981 /* VSStoreKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = VSStoreKit.podspec; sourceTree = "<group>"; };
+		E7B49D061F080BC30008116E /* VSStoreKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VSStoreKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B49D0A1F080BC30008116E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B49D191F080CEF0008116E /* TestProductsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProductsDataSource.swift; sourceTree = "<group>"; };
+		E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAccessMock.swift; sourceTree = "<group>"; };
+		E7C4D3C91F082FFD00737E8B /* ProductMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMock.swift; sourceTree = "<group>"; };
+		E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedProducts.swift; sourceTree = "<group>"; };
+		E7C4D3CD1F08306800737E8B /* LocalProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProducts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +56,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B49D031F080BC30008116E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7B49D0B1F080BC30008116E /* VSStoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +75,7 @@
 			children = (
 				E7B0AD341E9BD92900C33981 /* VSStoreKit.podspec */,
 				E7B0AD191E9BD8EE00C33981 /* VSStoreKit */,
+				E7B49D071F080BC30008116E /* VSStoreKitTests */,
 				E7B0AD181E9BD8ED00C33981 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */,
+				E7B49D061F080BC30008116E /* VSStoreKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +103,19 @@
 			);
 			name = VSStoreKit;
 			path = VSStore;
+			sourceTree = "<group>";
+		};
+		E7B49D071F080BC30008116E /* VSStoreKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7B49D191F080CEF0008116E /* TestProductsDataSource.swift */,
+				E7C4D3CD1F08306800737E8B /* LocalProducts.swift */,
+				E7C4D3C91F082FFD00737E8B /* ProductMock.swift */,
+				E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */,
+				E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */,
+				E7B49D0A1F080BC30008116E /* Info.plist */,
+			);
+			path = VSStoreKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,12 +149,31 @@
 			productReference = E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E7B49D051F080BC30008116E /* VSStoreKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7B49D101F080BC30008116E /* Build configuration list for PBXNativeTarget "VSStoreKitTests" */;
+			buildPhases = (
+				E7B49D021F080BC30008116E /* Sources */,
+				E7B49D031F080BC30008116E /* Frameworks */,
+				E7B49D041F080BC30008116E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7B49D0D1F080BC30008116E /* PBXTargetDependency */,
+			);
+			name = VSStoreKitTests;
+			productName = VSStoreKitTests;
+			productReference = E7B49D061F080BC30008116E /* VSStoreKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E7B0AD0E1E9BD8ED00C33981 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Vladimir Shutyuk";
 				TargetAttributes = {
@@ -116,6 +181,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = FB23C6P69F;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					E7B49D051F080BC30008116E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = FB23C6P69F;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,12 +203,20 @@
 			projectRoot = "";
 			targets = (
 				E7B0AD161E9BD8ED00C33981 /* VSStoreKit */,
+				E7B49D051F080BC30008116E /* VSStoreKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E7B0AD151E9BD8ED00C33981 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B49D041F080BC30008116E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -161,7 +239,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E7B49D021F080BC30008116E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C4D3CA1F082FFD00737E8B /* ProductMock.swift in Sources */,
+				E7C4D3CE1F08306800737E8B /* LocalProducts.swift in Sources */,
+				E7C4D3CC1F08304B00737E8B /* PurchasedProducts.swift in Sources */,
+				E7B49D1A1F080CEF0008116E /* TestProductsDataSource.swift in Sources */,
+				E7C4D3C81F082F6100737E8B /* StoreAccessMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7B49D0D1F080BC30008116E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7B0AD161E9BD8ED00C33981 /* VSStoreKit */;
+			targetProxy = E7B49D0C1F080BC30008116E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E7B0AD1D1E9BD8EE00C33981 /* Debug */ = {
@@ -308,6 +406,32 @@
 			};
 			name = Release;
 		};
+		E7B49D0E1F080BC30008116E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FB23C6P69F;
+				INFOPLIST_FILE = VSStoreKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.shookup.VSStoreKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E7B49D0F1F080BC30008116E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FB23C6P69F;
+				INFOPLIST_FILE = VSStoreKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.shookup.VSStoreKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -325,6 +449,15 @@
 			buildConfigurations = (
 				E7B0AD201E9BD8EE00C33981 /* Debug */,
 				E7B0AD211E9BD8EE00C33981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7B49D101F080BC30008116E /* Build configuration list for PBXNativeTarget "VSStoreKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7B49D0E1F080BC30008116E /* Debug */,
+				E7B49D0F1F080BC30008116E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
