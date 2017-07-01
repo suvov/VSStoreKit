@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     s.license      = "MIT"
     s.author       = { 'Vladimir Shutyuk' => 'shookup@gmail.com' }
     s.authors      = { 'Vladimir Shutyuk' => 'shookup@gmail.com' }
-    s.platform     = :ios, "9.0"
+    s.platform     = :ios, "8.0"
 
     s.source       = { :path => '.' }
     s.source_files = "VSStoreKit", "VSStoreKit/**/*.{h,m,swift}"
