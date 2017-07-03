@@ -1,5 +1,5 @@
 //
-//  LocalProducts.swift
+//  LocalProductsMock.swift
 //  VSStoreKit
 //
 //  Created by Vladimir Shutyuk on 01/07/2017.
@@ -10,7 +10,7 @@ import Foundation
 @testable import VSStoreKit
 
 
-class LocalProducts: LocalProductsProtocol {
+class LocalProductsMock: LocalProductsProtocol {
     
     let products: [LocalProduct]
     

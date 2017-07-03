@@ -18,7 +18,7 @@
 		E7C4D3C81F082F6100737E8B /* StoreAccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */; };
 		E7C4D3CA1F082FFD00737E8B /* ProductMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3C91F082FFD00737E8B /* ProductMock.swift */; };
 		E7C4D3CC1F08304B00737E8B /* PurchasedProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */; };
-		E7C4D3CE1F08306800737E8B /* LocalProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3CD1F08306800737E8B /* LocalProducts.swift */; };
+		E7C4D3CE1F08306800737E8B /* LocalProductsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4D3CD1F08306800737E8B /* LocalProductsMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,14 +41,13 @@
 		E79B5BC41F07E51A00078B51 /* StoreAccessState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreAccessState.swift; path = VSStoreKit/StoreAccessState.swift; sourceTree = SOURCE_ROOT; };
 		E7A337C91EEC96F000374F77 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = VSStoreKit/Protocols.swift; sourceTree = SOURCE_ROOT; };
 		E7B0AD171E9BD8ED00C33981 /* VSStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VSStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7B0AD341E9BD92900C33981 /* VSStoreKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = VSStoreKit.podspec; sourceTree = "<group>"; };
 		E7B49D061F080BC30008116E /* VSStoreKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VSStoreKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B49D0A1F080BC30008116E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B49D191F080CEF0008116E /* TestProductsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProductsDataSource.swift; sourceTree = "<group>"; };
 		E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreAccessMock.swift; sourceTree = "<group>"; };
 		E7C4D3C91F082FFD00737E8B /* ProductMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMock.swift; sourceTree = "<group>"; };
 		E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedProducts.swift; sourceTree = "<group>"; };
-		E7C4D3CD1F08306800737E8B /* LocalProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProducts.swift; sourceTree = "<group>"; };
+		E7C4D3CD1F08306800737E8B /* LocalProductsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProductsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,6 @@
 		E7B0AD0D1E9BD8ED00C33981 = {
 			isa = PBXGroup;
 			children = (
-				E7B0AD341E9BD92900C33981 /* VSStoreKit.podspec */,
 				E7B0AD191E9BD8EE00C33981 /* VSStoreKit */,
 				E7B49D071F080BC30008116E /* VSStoreKitTests */,
 				E7B0AD181E9BD8ED00C33981 /* Products */,
@@ -109,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B49D191F080CEF0008116E /* TestProductsDataSource.swift */,
-				E7C4D3CD1F08306800737E8B /* LocalProducts.swift */,
+				E7C4D3CD1F08306800737E8B /* LocalProductsMock.swift */,
 				E7C4D3C91F082FFD00737E8B /* ProductMock.swift */,
 				E7C4D3C71F082F6100737E8B /* StoreAccessMock.swift */,
 				E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */,
@@ -244,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C4D3CA1F082FFD00737E8B /* ProductMock.swift in Sources */,
-				E7C4D3CE1F08306800737E8B /* LocalProducts.swift in Sources */,
+				E7C4D3CE1F08306800737E8B /* LocalProductsMock.swift in Sources */,
 				E7C4D3CC1F08304B00737E8B /* PurchasedProducts.swift in Sources */,
 				E7B49D1A1F080CEF0008116E /* TestProductsDataSource.swift in Sources */,
 				E7C4D3C81F082F6100737E8B /* StoreAccessMock.swift in Sources */,

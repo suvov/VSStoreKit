@@ -18,7 +18,7 @@ class TestProductsDataSource: XCTestCase {
     private let storeProductsArray = [StoreProduct(name: "Store name 1", identifier:"xyz.suvov.productone", description:"Store description 1", price: "$1"),
                                      StoreProduct(name: "Store name 2", identifier:"xyz.suvov.producttwo", description:"Store description 2", price: "$2")]
     
-    private var localProducts: LocalProducts!
+    private var localProducts: LocalProductsMock!
     private var purchasedProducts: PurchasedProducts!
     private var storeAccessMock: StoreAccessMock!
     private var productsDataSource: ProductsDataSource!
@@ -63,7 +63,7 @@ class TestProductsDataSource: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        localProducts = LocalProducts(products: localProductsArray)
+        localProducts = LocalProductsMock(products: localProductsArray)
         purchasedProducts = PurchasedProducts()
         storeAccessMock = StoreAccessMock(products: storeProductsArray)
         productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccessMock, purchasedProducts: purchasedProducts)
