@@ -1,3 +1,5 @@
+[![codecov.io](https://codecov.io/gh/codecov/VSStoreKit/branch/master/graphs/badge.svg)](https://codecov.io/gh/codecov/VSStoreKit/branch/master)
+
 # VSStoreKit
 
 
