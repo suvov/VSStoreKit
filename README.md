@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/suvov/VSStoreKit.svg?branch=master)](https://travis-ci.org/suvov/VSStoreKit) [![codecov.io](https://codecov.io/gh/codecov/VSStoreKit/branch/master/graphs/badge.svg)](https://codecov.io/gh/codecov/VSStoreKit/branch/master)
+[![Build Status](https://travis-ci.org/suvov/VSStoreKit.svg?branch=master)](https://travis-ci.org/suvov/VSStoreKit) [![codecov.io](https://codecov.io/gh/suvov/VSStoreKit/branch/master/graphs/badge.svg)](https://codecov.io/gh/codecov/VSStoreKit/branch/master)
 
 # VSStoreKit
 
