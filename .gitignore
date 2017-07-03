@@ -18,5 +18,6 @@ profile
 DerivedData
 *.hmap
 *.ipa
+*.txt
 
 ./Pods

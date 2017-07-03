@@ -1,5 +1,12 @@
-language: swift
+language: objective-c
 osx_image: xcode8
+xcode_project: VSStoreKit.xcodeproj
+
+# whitelist
+branches:
+only:
+- master
+
 script:
 - xcodebuild -scheme VSStoreKit -project VSStoreKit.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 5S,OS=10.3' build test
 after_success:
