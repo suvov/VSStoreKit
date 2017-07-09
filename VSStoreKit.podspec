@@ -2,17 +2,17 @@ Pod::Spec.new do |s|
 
     s.name         = "VSStoreKit"
     s.version      = "0.9"
-    s.summary      = "VSStoreKit"
-    s.description  = "VSStoreKit"
-    s.homepage     = "http://suvov.github.io"
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
-    s.license      = "MIT"
-    s.author       = { 'Vladimir Shutyuk' => 'shookup@gmail.com' }
-    s.authors      = { 'Vladimir Shutyuk' => 'shookup@gmail.com' }
+    s.summary      = "Simple iOS StoreKit library"
+    s.description  = <<-DESC
+You can use VSStoreKit to make in-app purchases in iOS app.
+                    DESC
+    s.homepage         = 'https://github.com/suvov/VSStoreKit'
+    s.author       = { 'Vladimir Shutyuk' => 'vladimir.shutyuk@gmail.com' }
     s.platform     = :ios, "8.0"
 
-    s.source       = { :path => '.' }
-    s.source_files = "VSStoreKit", "VSStoreKit/**/*.{h,m,swift}"
-    s.resources    = "VSStoreKit/*.{xcassets,storyboard,xib}"
-    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+    s.source       = { :git => 'https://github.com/suvov/VSStoreKit.git', :tag => s.version.to_s }
+    s.source_files = 'VSStoreKit/*.swift'
+    s.ios.deployment_target = '8.0'
 end
