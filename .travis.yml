@@ -9,6 +9,6 @@ only:
 - master
 
 after_success:
-- bash <(curl -s https://codecov.io/bash) -t a0a7e812-c3f2-4f75-8038-4a1acd84faa1
+- bash <(curl -s https://codecov.io/bash)
 
 
