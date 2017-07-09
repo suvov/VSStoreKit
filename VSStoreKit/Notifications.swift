@@ -9,9 +9,9 @@
 import Foundation
 
 
-public extension Notification.Name {
+internal extension Notification.Name {
     
-    public static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
+    internal static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
 }
 
-public let StoreAccessStateUserInfoKey = "StoreAccessStateUserInfoKey"
+internal let StoreAccessStateUserInfoKey = "StoreAccessStateUserInfoKey"
