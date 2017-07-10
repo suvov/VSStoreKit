@@ -4,6 +4,8 @@
 
 ![Icon][img0]
 
+VSStoreKit is an easy to use library that will abstract away making in-app purchases in your iOS app. Check out Example project and documentation.
+
 ## Example
 
 Example app is in the Example folder. It doesn't do much because we can't provide example purchases, but you should get the idea.
@@ -25,6 +27,22 @@ pod 'VSStoreKit'
 
 ````
 
+## Documentation
+
+Read the [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy). Hosted by [GitHub Pages](https://pages.github.com).
+
+#### Generate
+
+````bash
+$ ./build_docs.sh
+````
+
+#### Preview
+
+````bash
+$ open index.html -a Safari
+````
+
 ## Author
 
 Vladimir Shutyuk, vladimir.shutyuk@gmail.com
@@ -34,3 +52,5 @@ Vladimir Shutyuk, vladimir.shutyuk@gmail.com
 VSStoreKit is available under the MIT license. See the LICENSE file for more info.
 
 [img0]:https://raw.githubusercontent.com/suvov/VSStoreKit/master/Icon0.png
+[docsLink]:http://suvov.xyz/VSStoreKit
+

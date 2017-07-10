@@ -14,7 +14,7 @@
     <a title="StoreAccess Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">VSStoreKit Docs</a> (98% documented)</p>
+        <p><a href="../index.html">VSStoreKit Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/suvov/VSStoreKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -70,7 +70,13 @@
         <section>
           <section class="section">
             <h1>StoreAccess</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">StoreAccess</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">SKProductsRequestDelegate</span><span class="p">,</span> <span class="kt">SKPaymentTransactionObserver</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>StoreAccess</code> is responsible for requesting products from the store, providing information about products by conforming to <code><a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a></code>, purchasing products and restoring previous purchases.</p>
 
           </section>
           <section class="section task-group-section">
@@ -86,9 +92,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler"></a>
-                    <a name="//apple_ref/swift/Alias/PurchaseCompletionHandler" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler">PurchaseCompletionHandler</a>
+                    <a name="/s:C10VSStoreKit11StoreAccess23PurchaseCompletionBlock"></a>
+                    <a name="//apple_ref/swift/Alias/PurchaseCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit11StoreAccess23PurchaseCompletionBlock">PurchaseCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,7 +109,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">PurchaseCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">purchasedProductIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">PurchaseCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">purchasedProductIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -132,9 +138,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC10VSStoreKit11StoreAccess18purchaseCompletionGSqFSST__"></a>
-                    <a name="//apple_ref/swift/Property/purchaseCompletion" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC10VSStoreKit11StoreAccess18purchaseCompletionGSqFSST__">purchaseCompletion</a>
+                    <a name="/s:vC10VSStoreKit11StoreAccess25purchaseCompletionHandlerGSqFSST__"></a>
+                    <a name="//apple_ref/swift/Property/purchaseCompletionHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit11StoreAccess25purchaseCompletionHandlerGSqFSST__">purchaseCompletionHandler</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -154,7 +160,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseCompletion</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccess.html#/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler">PurchaseCompletionHandler</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseCompletionHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccess.html#/s:C10VSStoreKit11StoreAccess23PurchaseCompletionBlock">PurchaseCompletionBlock</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

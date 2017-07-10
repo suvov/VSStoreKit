@@ -9,7 +9,9 @@
 import Foundation
 import StoreKit
 
-
+/**
+ `StoreAccess` is responsible for requesting products from the store, providing information about products by conforming to `StoreProductsDataSource`, purchasing products and restoring previous purchases.
+ */
 public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     // MARK: Typealiases
@@ -19,14 +21,14 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
      
      - parameter purchasedProductIdentifier: Identifier for product that was purchased.
     */
-    public typealias PurchaseCompletionHandler = (_ purchasedProductIdentifier: String) -> ()
+    public typealias PurchaseCompletionBlock = (_ purchasedProductIdentifier: String) -> ()
 
     /**
      A closure that is executed when product purchased.
      
      - warning: If this is nil, `StoreAccess` won't be able to purchase product or restore purchases.
      */
-    public var purchaseCompletion: PurchaseCompletionHandler?
+    public var purchaseCompletionHandler: PurchaseCompletionBlock?
     
     
     /// Current `StoreAccess` state.
@@ -70,7 +72,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
      - paramater identifier: Identifier for product to be purchased.
      */
     public func purchaseProductWithIdentifier(_ identifier: String) {
-        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access.")
+        assert(purchaseCompletionHandler != nil, "*** No transaction completion handler in Store Access.")
         guard let product = productWithIdentifier(identifier) else { return }
         SKPaymentQueue.default().add(SKPayment(product: product))
         state = .purchaseAttempt(identifier)
@@ -78,7 +80,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     
     /// Start restoring previous purchases.
     public func restorePurchases() {
-        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access")
+        assert(purchaseCompletionHandler != nil, "*** No transaction completion handler in Store Access")
         SKPaymentQueue.default().restoreCompletedTransactions()
         state = .restoringPurchases
     }
@@ -125,7 +127,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     }
     
     private func markFinishedTransactionForProductWithIdentifier(_ identifier: String) {
-        if let completion = purchaseCompletion {
+        if let completion = purchaseCompletionHandler {
             completion(identifier)
         } 
     }
