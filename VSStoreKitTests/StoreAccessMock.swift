@@ -10,7 +10,7 @@ import Foundation
 @testable import VSStoreKit
 
 
-class StoreAccessMock: StoreAccessProtocol {
+class StoreAccessMock: StoreProductsDataSource {
     
     var productsReceivedSettable = false
     
@@ -19,9 +19,7 @@ class StoreAccessMock: StoreAccessProtocol {
     init(products: [StoreProduct]) {
         self.products = products
     }
-    
-    func requestProductsWithIdentifiers(_ identifiers: Set<String>) { }
-    
+        
     var productsReceived: Bool {
         return productsReceivedSettable
     }
@@ -41,8 +39,4 @@ class StoreAccessMock: StoreAccessProtocol {
     private func productWithIdentifier(_ identifier: String) -> StoreProduct? {
         return products.first(where: { $0.identifier == identifier })
     }
-    
-    func purchaseProductWithIdentifier(_ identifier: String) { }
-    
-    func restorePurchases() { }
 }

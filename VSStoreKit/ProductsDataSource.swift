@@ -12,9 +12,9 @@ import Foundation
 public class ProductsDataSource {
     
     private let localProducts: LocalProductsDataSource
-    private let storeAccess: StoreAccessProtocol
+    private let storeAccess: StoreProductsDataSource
     
-    public init(localProducts: LocalProductsDataSource, storeAccess: StoreAccessProtocol) {
+    public init(localProducts: LocalProductsDataSource, storeAccess: StoreProductsDataSource) {
         self.localProducts = localProducts
         self.storeAccess = storeAccess
     }

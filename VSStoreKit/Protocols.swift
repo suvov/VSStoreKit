@@ -18,18 +18,12 @@ public protocol LocalProductsDataSource {
     func descriptionForProductAtIndex(_ index: Int) -> String
 }
 
-public protocol StoreAccessProtocol {
+public protocol StoreProductsDataSource {
     
-    func requestProductsWithIdentifiers(_ identifiers: Set<String>)
     var productsReceived: Bool { get }
-    
     func localizedNameForProductWithIdentifier(_ identifier: String) -> String?
     func localizedPriceForProductWithIdentifier(_ identifier: String) -> String?
     func localizedDescriptionForProductWithIdentifier(_ identifier: String) -> String?
-    
-    func purchaseProductWithIdentifier(_ identifier: String)
-    
-    func restorePurchases()
 }
 
 public protocol PurchasedProductsProtocol {

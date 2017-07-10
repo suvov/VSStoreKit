@@ -38,6 +38,26 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         SKPaymentQueue.default().add(self)
     }
     
+    //MARK: Request, purchase, restore
+    public func requestProductsWithIdentifiers(_ identifiers: Set<String>) {
+        let productRequest = SKProductsRequest(productIdentifiers: identifiers)
+        productRequest.delegate = self
+        productRequest.start()
+    }
+    
+    public func purchaseProductWithIdentifier(_ identifier: String) {
+        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access.")
+        guard let product = productWithIdentifier(identifier) else { return }
+        SKPaymentQueue.default().add(SKPayment(product: product))
+        state = .purchaseAttempt(identifier)
+    }
+    
+    public func restorePurchases() {
+        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access")
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        state = .restoringPurchases
+    }
+    
     // MARK: SKProductsRequestDelegate
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         products = response.products
@@ -81,16 +101,15 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
             completion(identifier)
         } 
     }
+    
+    fileprivate func productWithIdentifier(_ identifier: String) -> SKProduct? {
+        guard let products = products else { return nil }
+        return products.first(where: { $0.productIdentifier == identifier })
+    }
 }
 
-extension StoreAccess: StoreAccessProtocol {
-    
-    public func requestProductsWithIdentifiers(_ identifiers: Set<String>) {
-        let productRequest = SKProductsRequest(productIdentifiers: identifiers)
-        productRequest.delegate = self
-        productRequest.start()
-    }
-    
+extension StoreAccess: StoreProductsDataSource {
+
     public var productsReceived: Bool {
         if let products = products, products.count > 0 {
             return true
@@ -119,25 +138,7 @@ extension StoreAccess: StoreAccessProtocol {
         return nil
     }
     
-    public func purchaseProductWithIdentifier(_ identifier: String) {
-        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access.")
-        guard let product = productWithIdentifier(identifier) else { return }
-        SKPaymentQueue.default().add(SKPayment(product: product))
-        state = .purchaseAttempt(identifier)
-    }
-    
-    public func restorePurchases() {
-        assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access")
-        SKPaymentQueue.default().restoreCompletedTransactions()
-        state = .restoringPurchases
-    }
-    
     // MARK:
-    private func productWithIdentifier(_ identifier: String) -> SKProduct? {
-        guard let products = products else { return nil }
-        return products.first(where: { $0.productIdentifier == identifier })
-    }
-    
     private func localizedPriceForProduct(_ product: SKProduct) -> String? {
         let formatter = NumberFormatter()
         formatter.formatterBehavior = .behavior10_4
