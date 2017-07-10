@@ -29,14 +29,14 @@ class TestProductsDataSource: XCTestCase {
     }
     
     func testThatProductsDataSourceReturnsCorrectProductIdentifier() {
-        for (index, product) in localProductsArray.enumerated() {
+        for (index, _) in localProductsArray.enumerated() {
             XCTAssertEqual(localProductsArray[index].identifier, productsDataSource.identifierForProductAtIndex(index))
             XCTAssertEqual(localProductsArray[index].identifier, productsDataSource.identifierForProductAtIndex(index))
         }
     }
     
     func testThatProductsDataSourceReturnsCorrectLocalProductNamePriceAndDescription() {
-        for (index, product) in localProductsArray.enumerated() {
+        for (index, _) in localProductsArray.enumerated() {
             XCTAssertEqual(localProductsArray[index].name, productsDataSource.localizedNameForProductAtIndex(index))
             XCTAssertEqual(localProductsArray[index].description, productsDataSource.localizedDescriptionForProductAtIndex(index))
             XCTAssertNil(productsDataSource.localizedPriceForProductAtIndex(index))
@@ -45,7 +45,7 @@ class TestProductsDataSource: XCTestCase {
     
     func testThatProductsDataSourceReturnsCorrectStoreProductNamePriceAndDescription() {
         storeAccessMock.productsReceivedSettable = true 
-        for (index, product) in localProductsArray.enumerated() {
+        for (index, _) in localProductsArray.enumerated() {
             XCTAssertEqual(storeProductsArray[index].name, productsDataSource.localizedNameForProductAtIndex(index))
             XCTAssertEqual(storeProductsArray[index].description, productsDataSource.localizedDescriptionForProductAtIndex(index))
             XCTAssertEqual(storeProductsArray[index].price, productsDataSource.localizedPriceForProductAtIndex(index))
