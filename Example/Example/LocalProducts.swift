@@ -7,7 +7,7 @@
 //
 
 /*
-    Implementation of LocalProductsProtocol.
+    Implementation of LocalProductsDataSource.
     Provides information about in-app purchase products we have in our app.
     It should be the same as the in-app purchases in iTunesConnect.
 */
@@ -16,7 +16,7 @@ import Foundation
 import VSStoreKit
 
 
-struct LocalProducts: LocalProductsProtocol {
+struct LocalProducts: LocalProductsDataSource {
     
     private struct Product {
         let name: String

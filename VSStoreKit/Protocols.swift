@@ -9,7 +9,7 @@
 import Foundation
 
 
-public protocol LocalProductsProtocol {
+public protocol LocalProductsDataSource {
     
     var productsCount: Int { get }
     var productIdentifiers: Set<String> { get }

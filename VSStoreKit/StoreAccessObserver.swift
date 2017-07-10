@@ -38,7 +38,7 @@ public class StoreAccessObserver: NSObject {
     
     public var purchaseFailedStateHandler: SKErrorBlock?
     
-    public var transactionDeferredStateHandler: EmptyBlock?
+    public var purchaseDeferredStateHandler: EmptyBlock?
 
  
     override public init() {
@@ -73,8 +73,8 @@ public class StoreAccessObserver: NSObject {
             restoredPurchasesStateHandler?()
         case .purchaseFailed(let skError):
             purchaseFailedStateHandler?(skError)
-        case .transactionDeferred:
-            transactionDeferredStateHandler?()
+        case .purchaseDeferred:
+            purchaseDeferredStateHandler?()
         }
     }
 }

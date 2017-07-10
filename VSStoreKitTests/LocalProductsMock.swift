@@ -10,7 +10,7 @@ import Foundation
 @testable import VSStoreKit
 
 
-class LocalProductsMock: LocalProductsProtocol {
+class LocalProductsMock: LocalProductsDataSource {
     
     let products: [LocalProduct]
     

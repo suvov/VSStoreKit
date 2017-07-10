@@ -32,5 +32,5 @@ public enum StoreAccessState {
     
     case purchaseFailed(SKError?)
     
-    case transactionDeferred
+    case purchaseDeferred
 }

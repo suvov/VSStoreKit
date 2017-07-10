@@ -63,7 +63,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
                 state = .purchaseFailed(transaction.error as? SKError)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred:
-                state = .transactionDeferred
+                state = .purchaseDeferred
             case .purchasing:
                 state = .purchasing
             }

@@ -20,11 +20,11 @@ public enum ProductState {
 
 public class ProductsDataSource {
     
-    private let localProducts: LocalProductsProtocol
+    private let localProducts: LocalProductsDataSource
     private let storeAccess: StoreAccessProtocol
     private let purchasedProducts: PurchasedProductsProtocol
     
-    public init(localProducts: LocalProductsProtocol, storeAccess: StoreAccessProtocol, purchasedProducts: PurchasedProductsProtocol) {
+    public init(localProducts: LocalProductsDataSource, storeAccess: StoreAccessProtocol, purchasedProducts: PurchasedProductsProtocol) {
         self.localProducts = localProducts
         self.storeAccess = storeAccess
         self.purchasedProducts = purchasedProducts
