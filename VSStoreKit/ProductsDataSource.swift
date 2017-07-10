@@ -9,25 +9,14 @@
 import Foundation
 
 
-public enum ProductState {
-    
-    case retrieving
-    
-    case retrieved
-    
-    case purchased
-}
-
 public class ProductsDataSource {
     
     private let localProducts: LocalProductsDataSource
     private let storeAccess: StoreAccessProtocol
-    private let purchasedProducts: PurchasedProductsProtocol
     
-    public init(localProducts: LocalProductsDataSource, storeAccess: StoreAccessProtocol, purchasedProducts: PurchasedProductsProtocol) {
+    public init(localProducts: LocalProductsDataSource, storeAccess: StoreAccessProtocol) {
         self.localProducts = localProducts
         self.storeAccess = storeAccess
-        self.purchasedProducts = purchasedProducts
     }
     
     public var numProducts: Int {
@@ -58,17 +47,6 @@ public class ProductsDataSource {
             return price
         }
         return nil
-    }
-    
-    public func stateForProductAtIndex(_ index: Int) -> ProductState {
-        let productIdentifier = localProducts.identifierForProductAtIndex(index)
-        if purchasedProducts.isPurchasedProductWithIdentifier(productIdentifier) {
-            return .purchased
-        } else if !storeAccess.productsReceived {
-            return .retrieving
-        } else {
-            return .retrieved
-        }
     }
     
     public func identifierForProductAtIndex(_ index: Int) -> String {

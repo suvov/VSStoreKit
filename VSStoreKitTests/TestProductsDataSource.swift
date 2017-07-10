@@ -52,21 +52,12 @@ class TestProductsDataSource: XCTestCase {
         }
     }
     
-    func testThatProductsDataSourceReturnsCorrectStateForProduct() {
-        storeAccessMock.productsReceivedSettable = false
-        XCTAssertTrue(productsDataSource.stateForProductAtIndex(0) == .retrieving)
-        storeAccessMock.productsReceivedSettable = true
-        XCTAssertTrue(productsDataSource.stateForProductAtIndex(0) == .retrieved)
-        purchasedProducts.markProductAsPurchased(localProductsArray[0].identifier)
-        XCTAssertTrue(productsDataSource.stateForProductAtIndex(0) == .purchased)
-    }
-    
     override func setUp() {
         super.setUp()
         localProducts = LocalProductsMock(products: localProductsArray)
         purchasedProducts = PurchasedProducts()
         storeAccessMock = StoreAccessMock(products: storeProductsArray)
-        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccessMock, purchasedProducts: purchasedProducts)
+        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccessMock)
     }
     
     override func tearDown() {

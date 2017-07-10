@@ -31,7 +31,7 @@ class ViewController: UITableViewController {
     }
     
     private func setupProductsDataSource() {
-        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccess, purchasedProducts: purchasedProducts)
+        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccess)
         tableView.reloadData()
     }
     
