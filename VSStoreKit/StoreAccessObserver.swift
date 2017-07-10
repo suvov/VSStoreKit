@@ -73,7 +73,7 @@ public class StoreAccessObserver: NSObject {
     }
     
     /// :nodoc:
-    func storeAccessDidUpdateState(_ notification: Notification?) {
+    internal func storeAccessDidUpdateState(_ notification: Notification?) {
         guard let state = notification?.userInfo?[StoreAccessStateUserInfoKey] as? StoreAccessState else { return }
         switch state {
         case .unknown:

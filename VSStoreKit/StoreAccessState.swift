@@ -28,14 +28,14 @@ public enum StoreAccessState {
      
      - parameter error: The error that caused the request to fail.
      */
-    case requestForProductsFailed(Error)
+    case requestForProductsFailed(error: Error)
     
     /**
      Store access attempting to purchase product.
      
      - parameter productIdentifier: Identifier of a product being purchased.
      */
-    case purchaseAttempt(String)
+    case purchaseAttempt(productIdentifier: String)
     
     /// Store access is purchasing product.
     case purchasing
@@ -54,7 +54,7 @@ public enum StoreAccessState {
      Purchase of a product failed.
      - parameter skError: An object describing the error that occurred while purchasing product.
      */
-    case purchaseFailed(SKError?)
+    case purchaseFailed(skError: SKError?)
     
     /// Processing product purchase. For more information please check out: https://developer.apple.com/documentation/storekit/skpaymenttransactionstate/1411277-deferred
     case purchaseDeferred

@@ -75,7 +75,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         assert(purchaseCompletionHandler != nil, "*** No transaction completion handler in Store Access.")
         guard let product = productWithIdentifier(identifier) else { return }
         SKPaymentQueue.default().add(SKPayment(product: product))
-        state = .purchaseAttempt(identifier)
+        state = .purchaseAttempt(productIdentifier: identifier)
     }
     
     /// Start restoring previous purchases.
@@ -94,7 +94,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     
     /// :nodoc:
     public func request(_ request: SKRequest, didFailWithError error: Error) {
-        state = .requestForProductsFailed(error)
+        state = .requestForProductsFailed(error: error)
         print("*** Error loading products \(error)")
     }
     
@@ -110,7 +110,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
                 state = .restored
                 completePurchaseForTransaction(transaction)
             case .failed:
-                state = .purchaseFailed(transaction.error as? SKError)
+                state = .purchaseFailed(skError: transaction.error as? SKError)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred:
                 state = .purchaseDeferred
