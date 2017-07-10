@@ -75,10 +75,7 @@
 
 <p><img src="https://raw.githubusercontent.com/suvov/VSStoreKit/master/Icon0.png" alt="Icon"></p>
 
-<p>VSStoreKit is an easy to use library that will abstract away making in-app purchases in your iOS app. Check out Example project and documentation.</p>
-<h2 id='example' class='heading'>Example</h2>
-
-<p>Example app is in the Example folder. It doesn&rsquo;t do much because we can&rsquo;t provide example purchases, but you should get the idea.</p>
+<p>VSStoreKit is an easy to use library that you can use to make in-app purchases in your iOS app. </p>
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
@@ -102,6 +99,53 @@
 <h4 id='preview' class='heading'>Preview</h4>
 <pre class="highlight shell"><code><span class="gp">$ </span>open index.html -a Safari
 </code></pre>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VSStoreKit</span>
+</code></pre>
+<h2 id='design' class='heading'>Design</h2>
+
+<p>This library has five primary components with the following responsibilities:</p>
+
+<ol>
+<li><code>StoreAccess</code> — requesting products from the Store, providing product details such as price and purchasing products</li>
+<li><code>PurchasedProductsProtocol</code> — instance conforming to this protocol stores completed purchases</li>
+<li><code>LocalProductsDataSource</code> — instance conforming to this protocol provides information about products for sale in the app</li>
+<li><code>ProductsDataSource</code> — also provides information about products for sale, but combines local and received from the Store information about products</li>
+<li><code>StoreAccessObserver</code> — observing StoreAccess state change and notifying client via callback methods</li>
+</ol>
+<h2 id='example' class='heading'>Example</h2>
+<pre class="highlight swift"><code><span class="c1">// 1. Create an instance conforming to PurchasedProductsProtocol </span>
+<span class="k">let</span> <span class="nv">puchasedProducts</span><span class="p">:</span> <span class="kt">PurchasedProductsProtocol</span> <span class="o">=</span> <span class="kt">PurchasedProducts</span><span class="p">()</span>
+
+<span class="c1">// 2. Provide StoreAccess purchaseCompletionHandler so it can mark products as purchased</span>
+<span class="k">let</span> <span class="nv">storeAccess</span> <span class="o">=</span> <span class="kt">StoreAccess</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">storeAccess</span><span class="o">.</span><span class="n">purchaseCompletionHandler</span> <span class="o">=</span> <span class="p">{</span> <span class="n">purchasedProductIdentifier</span> <span class="k">in</span>
+    <span class="n">puchasedProducts</span><span class="o">.</span><span class="nf">markProductAsPurchased</span><span class="p">(</span><span class="n">purchasedProductIdentifier</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 3. Create an instance conforming to LocalProductsDataSource with your products (in-app purchases)</span>
+<span class="k">let</span> <span class="nv">localProducts</span><span class="p">:</span> <span class="kt">LocalProductsDataSource</span> <span class="o">=</span> <span class="kt">LocalProducts</span><span class="p">()</span>
+
+<span class="c1">// 4. Request products from the store</span>
+<span class="n">storeAccess</span><span class="o">.</span><span class="nf">requestProductsWithIdentifiers</span><span class="p">(</span><span class="n">localProducts</span><span class="o">.</span><span class="n">productIdentifiers</span><span class="p">)</span>
+
+<span class="c1">// 5. Instantiate ProductsDataSource object that you will use to populate your UITableView, UICollectionView or whatever with products (in-app purchases)</span>
+<span class="k">let</span> <span class="nv">productsDataSource</span> <span class="o">=</span> <span class="kt">ProductsDataSource</span><span class="p">(</span><span class="nv">localProducts</span><span class="p">:</span> <span class="n">localProducts</span><span class="p">,</span> <span class="nv">storeProducts</span><span class="p">:</span> <span class="n">storeAccess</span><span class="p">)</span>
+
+<span class="c1">// 6. Buy product</span>
+<span class="k">let</span> <span class="nv">productIdentifier</span> <span class="o">=</span> <span class="n">productsDataSource</span><span class="o">.</span><span class="nf">identifierForProductAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="n">storeAccess</span><span class="o">.</span><span class="nf">purchaseProductWithIdentifier</span><span class="p">(</span><span class="n">productIdentifier</span><span class="p">)</span>
+
+<span class="c1">// 7. Observe StoreAccess state change with help of StoreAccessObserver by providing it optional handlers for the states you are interested in</span>
+<span class="k">let</span> <span class="nv">storeAccessObserver</span> <span class="o">=</span> <span class="kt">StoreAccessObserver</span><span class="p">()</span>
+<span class="n">storeAccessObserver</span><span class="o">.</span><span class="n">receivedProductsStateHandler</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// reload your products presentation</span>
+<span class="p">}</span>
+<span class="n">storeAccessObserver</span><span class="o">.</span><span class="n">purchasedStateHandler</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// reload your products presentation</span>
+<span class="p">}</span>
+
+</code></pre>
 <h2 id='author' class='heading'>Author</h2>
 
 <p>Vladimir Shutyuk, <a href="mailto:vladimir.shutyuk@gmail.com">vladimir.shutyuk@gmail.com</a></p>
@@ -112,7 +156,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://twitter.com/suvov" target="_blank" rel="external">Vladimir Shutyuk</a>. All rights reserved. (Last updated: 2017-07-10)</p>
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/suvov" target="_blank" rel="external">Vladimir Shutyuk</a>. All rights reserved. (Last updated: 2017-07-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

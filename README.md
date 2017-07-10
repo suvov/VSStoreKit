@@ -4,11 +4,7 @@
 
 ![Icon][img0]
 
-VSStoreKit is an easy to use library that will abstract away making in-app purchases in your iOS app. Check out Example project and documentation.
-
-## Example
-
-Example app is in the Example folder. It doesn't do much because we can't provide example purchases, but you should get the idea.
+VSStoreKit is an easy to use library that you can use to make in-app purchases in your iOS app. 
 
 ## Requirements
 
@@ -41,6 +37,56 @@ $ ./build_docs.sh
 
 ````bash
 $ open index.html -a Safari
+````
+
+## Getting Started
+
+````swift
+import VSStoreKit
+````
+## Design 
+
+This library has five primary components with the following responsibilities:
+1. `StoreAccess` — requesting products from the Store, providing product details such as price and purchasing products
+2.  `PurchasedProductsProtocol` — instance conforming to this protocol stores completed purchases
+3.  `LocalProductsDataSource` — instance conforming to this protocol provides information about products for sale in the app
+4.  `ProductsDataSource` — also provides information about products for sale, but combines local and received from the Store information about products
+5.  `StoreAccessObserver` — observing StoreAccess state change and notifying client via callback methods
+
+## Example
+
+````swift
+// 1. Create an instance conforming to PurchasedProductsProtocol 
+let puchasedProducts: PurchasedProductsProtocol = PurchasedProducts()
+
+// 2. Provide StoreAccess purchaseCompletionHandler so it can mark products as purchased
+let storeAccess = StoreAccess.shared
+storeAccess.purchaseCompletionHandler = { purchasedProductIdentifier in
+    puchasedProducts.markProductAsPurchased(purchasedProductIdentifier)
+}
+
+// 3. Create an instance conforming to LocalProductsDataSource with your products (in-app purchases)
+let localProducts: LocalProductsDataSource = LocalProducts()
+
+// 4. Request products from the store
+storeAccess.requestProductsWithIdentifiers(localProducts.productIdentifiers)
+
+// 5. Instantiate ProductsDataSource object that you will use to populate your UITableView, UICollectionView or whatever with products (in-app purchases)
+let productsDataSource = ProductsDataSource(localProducts: localProducts, storeProducts: storeAccess)
+
+// 6. Buy product
+let productIdentifier = productsDataSource.identifierForProductAtIndex(index)
+storeAccess.purchaseProductWithIdentifier(productIdentifier)
+
+// 7. Observe StoreAccess state change with help of StoreAccessObserver by providing it optional handlers for the states you are interested in
+let storeAccessObserver = StoreAccessObserver()
+storeAccessObserver.receivedProductsStateHandler = {
+    // reload your products presentation
+}
+storeAccessObserver.purchasedStateHandler = {
+    // reload your products presentation
+}
+
 ````
 
 ## Author
