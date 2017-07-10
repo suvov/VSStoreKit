@@ -57,7 +57,7 @@ class TestProductsDataSource: XCTestCase {
         localProducts = LocalProductsMock(products: localProductsArray)
         purchasedProducts = PurchasedProducts()
         storeAccessMock = StoreAccessMock(products: storeProductsArray)
-        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccessMock)
+        productsDataSource = ProductsDataSource(localProducts: localProducts, storeProducts: storeAccessMock)
     }
     
     override func tearDown() {

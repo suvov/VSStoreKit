@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StoreAccessObserver Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/StoreAccessObserver" class="dashAnchor"></a>
+    <a title="StoreAccessObserver Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VSStoreKit Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/suvov/VSStoreKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VSStoreKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StoreAccessObserver Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProductsDataSource.html">ProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccess.html">StoreAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccessObserver.html">StoreAccessObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/StoreAccessState.html">StoreAccessState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LocalProductsDataSource.html">LocalProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PurchasedProductsProtocol.html">PurchasedProductsProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StoreAccessObserver</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">StoreAccessObserver</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>StoreAccessObserver</code> observes <code><a href="../Classes/StoreAccess.html">StoreAccess</a></code> state. Client may react to state change of it&rsquo;s interest by providing handler closure.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Typealiases"></a>
+                <a name="//apple_ref/swift/Section/Typealiases" class="dashAnchor"></a>
+                <a href="#/Typealiases">
+                  <h3 class="section-name">Typealiases</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock"></a>
+                    <a name="//apple_ref/swift/Alias/EmptyBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that takes no parameters and returns nothing</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">EmptyBlock</span> <span class="o">=</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C10VSStoreKit19StoreAccessObserver10ErrorBlock"></a>
+                    <a name="//apple_ref/swift/Alias/ErrorBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit19StoreAccessObserver10ErrorBlock">ErrorBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block with Error parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ErrorBlock</span> <span class="o">=</span>  <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C10VSStoreKit19StoreAccessObserver11StringBlock"></a>
+                    <a name="//apple_ref/swift/Alias/StringBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit19StoreAccessObserver11StringBlock">StringBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block with String parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">StringBlock</span> <span class="o">=</span> <span class="p">((</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C10VSStoreKit19StoreAccessObserver12SKErrorBlock"></a>
+                    <a name="//apple_ref/swift/Alias/SKErrorBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit19StoreAccessObserver12SKErrorBlock">SKErrorBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block with SKError? parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">SKErrorBlock</span> <span class="o">=</span> <span class="p">((</span><span class="kt">SKError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Store%20Access%20state%20change%20handlers."></a>
+                <a name="//apple_ref/swift/Section/Store Access state change handlers." class="dashAnchor"></a>
+                <a href="#/Store%20Access%20state%20change%20handlers.">
+                  <h3 class="section-name">Store Access state change handlers.</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver19unknownStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/unknownStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver19unknownStateHandlerGSqFT_T__">unknownStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .unknown</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">unknownStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver30requestingProductsStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/requestingProductsStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver30requestingProductsStateHandlerGSqFT_T__">requestingProductsStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .requestingProducts</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">requestingProductsStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver28receivedProductsStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/receivedProductsStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver28receivedProductsStateHandlerGSqFT_T__">receivedProductsStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .receivedProducts</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">receivedProductsStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver36requestForProductsFailedStateHandlerGSqFPs5Error_T__"></a>
+                    <a name="//apple_ref/swift/Property/requestForProductsFailedStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver36requestForProductsFailedStateHandlerGSqFPs5Error_T__">requestForProductsFailedStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .requestForProductsFailed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">requestForProductsFailedStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10ErrorBlock">ErrorBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver27purchaseAttemptStateHandlerGSqFSST__"></a>
+                    <a name="//apple_ref/swift/Property/purchaseAttemptStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver27purchaseAttemptStateHandlerGSqFSST__">purchaseAttemptStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .purchaseAttempt</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseAttemptStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver11StringBlock">StringBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver22purchasingStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/purchasingStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver22purchasingStateHandlerGSqFT_T__">purchasingStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .purchasingState</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchasingStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver21purchasedStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/purchasedStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver21purchasedStateHandlerGSqFT_T__">purchasedStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .purchasedState</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchasedStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver30restoringPurchasesStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/restoringPurchasesStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver30restoringPurchasesStateHandlerGSqFT_T__">restoringPurchasesStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .restoringPurchases</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">restoringPurchasesStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver29restoredPurchasesStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/restoredPurchasesStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver29restoredPurchasesStateHandlerGSqFT_T__">restoredPurchasesStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .restoredPurchases</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">restoredPurchasesStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver26purchaseFailedStateHandlerGSqFGSqVSC7SKError_T__"></a>
+                    <a name="//apple_ref/swift/Property/purchaseFailedStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver26purchaseFailedStateHandlerGSqFGSqVSC7SKError_T__">purchaseFailedStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .purchaseFailed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseFailedStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver12SKErrorBlock">SKErrorBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit19StoreAccessObserver28purchaseDeferredStateHandlerGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/purchaseDeferredStateHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit19StoreAccessObserver28purchaseDeferredStateHandlerGSqFT_T__">purchaseDeferredStateHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Store Access</code> state has changed to .purchaseDeferred</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseDeferredStateHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccessObserver.html#/s:C10VSStoreKit19StoreAccessObserver10EmptyBlock">EmptyBlock</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/suvov" target="_blank" rel="external">Vladimir Shutyuk</a>. All rights reserved. (Last updated: 2017-07-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

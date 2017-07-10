@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StoreAccess Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/StoreAccess" class="dashAnchor"></a>
+    <a title="StoreAccess Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VSStoreKit Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/suvov/VSStoreKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VSStoreKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StoreAccess Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProductsDataSource.html">ProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccess.html">StoreAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccessObserver.html">StoreAccessObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/StoreAccessState.html">StoreAccessState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LocalProductsDataSource.html">LocalProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PurchasedProductsProtocol.html">PurchasedProductsProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StoreAccess</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Typealiases"></a>
+                <a name="//apple_ref/swift/Section/Typealiases" class="dashAnchor"></a>
+                <a href="#/Typealiases">
+                  <h3 class="section-name">Typealiases</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler"></a>
+                    <a name="//apple_ref/swift/Alias/PurchaseCompletionHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler">PurchaseCompletionHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides identifier for product that was purchased or restored.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">PurchaseCompletionHandler</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">purchasedProductIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>purchasedProductIdentifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Identifier for product that was purchased.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit11StoreAccess18purchaseCompletionGSqFSST__"></a>
+                    <a name="//apple_ref/swift/Property/purchaseCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit11StoreAccess18purchaseCompletionGSqFSST__">purchaseCompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A closure that is executed when product purchased.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    If this is nil, <code>StoreAccess</code> won&rsquo;t be able to purchase product or restore purchases.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseCompletion</span><span class="p">:</span> <span class="kt"><a href="../Classes/StoreAccess.html#/s:C10VSStoreKit11StoreAccess25PurchaseCompletionHandler">PurchaseCompletionHandler</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit11StoreAccess5stateOS_16StoreAccessState"></a>
+                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit11StoreAccess5stateOS_16StoreAccessState">state</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Current <code>StoreAccess</code> state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Enums/StoreAccessState.html">StoreAccessState</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">unknown</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC10VSStoreKit11StoreAccess6sharedS0_"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC10VSStoreKit11StoreAccess6sharedS0_">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>StoreAccess</code> singleton.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="k">var</span> <span class="nv">shared</span><span class="p">:</span> <span class="kt">StoreAccess</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit11StoreAccess30requestProductsWithIdentifiersFGVs3SetSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/requestProductsWithIdentifiers(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit11StoreAccess30requestProductsWithIdentifiersFGVs3SetSS_T_">requestProductsWithIdentifiers(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts a request for products with provided identifiers.</p>
+
+<ul>
+<li>paramater identifiers: Set of identifiers for products to be requested.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">requestProductsWithIdentifiers</span><span class="p">(</span><span class="n">_</span> <span class="nv">identifiers</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit11StoreAccess29purchaseProductWithIdentifierFSST_"></a>
+                    <a name="//apple_ref/swift/Method/purchaseProductWithIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit11StoreAccess29purchaseProductWithIdentifierFSST_">purchaseProductWithIdentifier(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start purchasing product with provided identifier.</p>
+
+<ul>
+<li>paramater identifier: Identifier for product to be purchased.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">purchaseProductWithIdentifier</span><span class="p">(</span><span class="n">_</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit11StoreAccess16restorePurchasesFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/restorePurchases()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit11StoreAccess16restorePurchasesFT_T_">restorePurchases()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start restoring previous purchases.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">restorePurchases</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/suvov" target="_blank" rel="external">Vladimir Shutyuk</a>. All rights reserved. (Last updated: 2017-07-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

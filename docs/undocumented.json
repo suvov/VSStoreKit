@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/vladimirshutyuk/Documents/Developer/VSStoreKit/VSStoreKit/StoreAccess.swift",
+      "line": 13,
+      "symbol": "StoreAccess",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/vladimirshutyuk/Documents/Developer/VSStoreKit"
+}

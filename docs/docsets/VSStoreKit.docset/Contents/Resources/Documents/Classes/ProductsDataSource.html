@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ProductsDataSource Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ProductsDataSource" class="dashAnchor"></a>
+    <a title="ProductsDataSource Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VSStoreKit Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/suvov/VSStoreKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VSStoreKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ProductsDataSource Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProductsDataSource.html">ProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccess.html">StoreAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StoreAccessObserver.html">StoreAccessObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/StoreAccessState.html">StoreAccessState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LocalProductsDataSource.html">LocalProductsDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PurchasedProductsProtocol.html">PurchasedProductsProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ProductsDataSource</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProductsDataSource</span></code></pre>
+
+                </div>
+              </div>
+            <p>A <code>ProductsDataSource</code> is responsible for providing actual products data, given <code><a href="../Protocols/LocalProductsDataSource.html">LocalProductsDataSource</a></code> and <code><a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a></code> objects.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit18ProductsDataSourcecFT13localProductsPS_23LocalProductsDataSource_13storeProductsPS_23StoreProductsDataSource__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(localProducts:storeProducts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit18ProductsDataSourcecFT13localProductsPS_23LocalProductsDataSource_13storeProductsPS_23StoreProductsDataSource__S0_">init(localProducts:storeProducts:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new products data source.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">localProducts</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LocalProductsDataSource.html">LocalProductsDataSource</a></span><span class="p">,</span> <span class="nv">storeProducts</span><span class="p">:</span> <span class="kt"><a href="../Protocols/StoreProductsDataSource.html">StoreProductsDataSource</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>localProducts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>LocalProductsDataSource</code> object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>storeProducts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>StoreProductsDataSource</code> object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code>ProductsDataSource</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC10VSStoreKit18ProductsDataSource11numProductsSi"></a>
+                    <a name="//apple_ref/swift/Property/numProducts" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC10VSStoreKit18ProductsDataSource11numProductsSi">numProducts</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of products.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">numProducts</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit18ProductsDataSource30localizedNameForProductAtIndexFSiSS"></a>
+                    <a name="//apple_ref/swift/Method/localizedNameForProductAtIndex(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit18ProductsDataSource30localizedNameForProductAtIndexFSiSS">localizedNameForProductAtIndex(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Localized name for product at index. If products received from the store, returns localized name received from the store, otherwise returns name of corresponding local product, localized with NSLocalizedString macro.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">localizedNameForProductAtIndex</span><span class="p">(</span><span class="n">_</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index of product in the data source.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Localized name for product on specified index.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit18ProductsDataSource37localizedDescriptionForProductAtIndexFSiSS"></a>
+                    <a name="//apple_ref/swift/Method/localizedDescriptionForProductAtIndex(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit18ProductsDataSource37localizedDescriptionForProductAtIndexFSiSS">localizedDescriptionForProductAtIndex(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Localized description for product at index. If products received from the store, returns localized description received from the store, otherwise returns description of corresponding local product, localized with NSLocalizedString macro.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">localizedDescriptionForProductAtIndex</span><span class="p">(</span><span class="n">_</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index of product in the data source.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Localized description for product on specified index.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit18ProductsDataSource31localizedPriceForProductAtIndexFSiGSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/localizedPriceForProductAtIndex(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit18ProductsDataSource31localizedPriceForProductAtIndexFSiGSqSS_">localizedPriceForProductAtIndex(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Localized price for product at index. If products received from the store, returns localized price received from the store, otherwise returns nil.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">localizedPriceForProductAtIndex</span><span class="p">(</span><span class="n">_</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index of product in the data source.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Localized price for product on specified index.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC10VSStoreKit18ProductsDataSource27identifierForProductAtIndexFSiSS"></a>
+                    <a name="//apple_ref/swift/Method/identifierForProductAtIndex(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC10VSStoreKit18ProductsDataSource27identifierForProductAtIndexFSiSS">identifierForProductAtIndex(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">identifierForProductAtIndex</span><span class="p">(</span><span class="n">_</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An index of product in the data source.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Identifier for product on specified index.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/suvov" target="_blank" rel="external">Vladimir Shutyuk</a>. All rights reserved. (Last updated: 2017-07-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

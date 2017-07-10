@@ -12,10 +12,24 @@ import StoreKit
 
 public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
+    // MARK: Typealiases
+    
+    /**
+     Provides identifier for product that was purchased or restored.
+     
+     - parameter purchasedProductIdentifier: Identifier for product that was purchased.
+    */
     public typealias PurchaseCompletionHandler = (_ purchasedProductIdentifier: String) -> ()
 
+    /**
+     A closure that is executed when product purchased.
+     
+     - warning: If this is nil, `StoreAccess` won't be able to purchase product or restore purchases.
+     */
     public var purchaseCompletion: PurchaseCompletionHandler?
     
+    
+    /// Current `StoreAccess` state.
     public fileprivate(set) var state: StoreAccessState = .unknown {
         didSet {
             NotificationCenter.default.post(name: .storeAccessDidUpdateState, object: self, userInfo: [StoreAccessStateUserInfoKey: state])
@@ -25,7 +39,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     fileprivate var products: [SKProduct]?
 
     
-    // MARK:
+    /// `StoreAccess` singleton.
     public class var shared: StoreAccess {
          struct Static {
             static let instance = StoreAccess()
@@ -33,18 +47,28 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         return Static.instance
     }
     
+    /// :nodoc:
     override init() {
         super.init()
         SKPaymentQueue.default().add(self)
     }
     
-    //MARK: Request, purchase, restore
+    /**
+     Starts a request for products with provided identifiers.
+     
+     - paramater identifiers: Set of identifiers for products to be requested.
+     */
     public func requestProductsWithIdentifiers(_ identifiers: Set<String>) {
         let productRequest = SKProductsRequest(productIdentifiers: identifiers)
         productRequest.delegate = self
         productRequest.start()
     }
     
+    /**
+     Start purchasing product with provided identifier.
+     
+     - paramater identifier: Identifier for product to be purchased.
+     */
     public func purchaseProductWithIdentifier(_ identifier: String) {
         assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access.")
         guard let product = productWithIdentifier(identifier) else { return }
@@ -52,6 +76,7 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         state = .purchaseAttempt(identifier)
     }
     
+    /// Start restoring previous purchases.
     public func restorePurchases() {
         assert(purchaseCompletion != nil, "*** No transaction completion handler in Store Access")
         SKPaymentQueue.default().restoreCompletedTransactions()
@@ -59,17 +84,20 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
     }
     
     // MARK: SKProductsRequestDelegate
+    /// :nodoc:
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         products = response.products
         state = .receivedProducts
     }
     
+    /// :nodoc:
     public func request(_ request: SKRequest, didFailWithError error: Error) {
         state = .requestForProductsFailed(error)
         print("*** Error loading products \(error)")
     }
     
     // MARK: SKPaymentTransactionObserver
+    /// :nodoc:
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -109,7 +137,8 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
 }
 
 extension StoreAccess: StoreProductsDataSource {
-
+    
+    /// :nodoc:
     public var productsReceived: Bool {
         if let products = products, products.count > 0 {
             return true
@@ -117,6 +146,7 @@ extension StoreAccess: StoreProductsDataSource {
         return false
     }
     
+    /// :nodoc:
     public func localizedNameForProductWithIdentifier(_ identifier: String) -> String? {
         if let product = productWithIdentifier(identifier) {
             return product.localizedTitle
@@ -124,6 +154,7 @@ extension StoreAccess: StoreProductsDataSource {
         return nil
     }
     
+    /// :nodoc:
     public func localizedPriceForProductWithIdentifier(_ identifier: String) -> String? {
         if let product = productWithIdentifier(identifier) {
             return localizedPriceForProduct(product)
@@ -131,6 +162,7 @@ extension StoreAccess: StoreProductsDataSource {
         return nil
     }
     
+    /// :nodoc:
     public func localizedDescriptionForProductWithIdentifier(_ identifier: String) -> String? {
         if let product = productWithIdentifier(identifier) {
             return product.localizedDescription
