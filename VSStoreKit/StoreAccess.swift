@@ -73,6 +73,10 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
      */
     public func purchaseProductWithIdentifier(_ identifier: String) {
         assert(purchaseCompletionHandler != nil, "*** No transaction completion handler in Store Access.")
+        guard SKPaymentQueue.canMakePayments() else {
+            state = .cannotMakePayments
+            return
+        }
         guard let product = productWithIdentifier(identifier) else { return }
         SKPaymentQueue.default().add(SKPayment(product: product))
         state = .purchaseAttempt(productIdentifier: identifier)

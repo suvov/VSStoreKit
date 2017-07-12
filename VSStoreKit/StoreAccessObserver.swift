@@ -43,6 +43,9 @@ public class StoreAccessObserver: NSObject {
     /// `Store Access` state has changed to .purchaseAttempt
     public var purchaseAttemptStateHandler: StringBlock?
     
+    /// `Store Access` state has changed to .cannotMakePayments
+    public var cannotMakePaymentsStateHandler: EmptyBlock?
+    
     /// `Store Access` state has changed to .purchasingState
     public var purchasingStateHandler: EmptyBlock?
     
@@ -86,6 +89,8 @@ public class StoreAccessObserver: NSObject {
             requestForProductsFailedStateHandler?(error)
         case .purchaseAttempt(let productIdentifier):
             purchaseAttemptStateHandler?(productIdentifier)
+        case .cannotMakePayments:
+            cannotMakePaymentsStateHandler?()
         case .purchasing:
             purchasingStateHandler?()
         case .purchased:

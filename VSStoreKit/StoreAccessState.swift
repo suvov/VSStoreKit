@@ -37,6 +37,9 @@ public enum StoreAccessState {
      */
     case purchaseAttempt(productIdentifier: String)
     
+    /// Making payments is not allowed for the user
+    case cannotMakePayments
+    
     /// Store access is purchasing product.
     case purchasing
     
