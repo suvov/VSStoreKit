@@ -108,14 +108,14 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
+                completePurchaseForTransaction(transaction)
                 state = .purchased
-                completePurchaseForTransaction(transaction)
             case .restored:
-                state = .restored
                 completePurchaseForTransaction(transaction)
+                state = .restored
             case .failed:
-                state = .purchaseFailed(skError: transaction.error as? SKError)
                 SKPaymentQueue.default().finishTransaction(transaction)
+                state = .purchaseFailed(skError: transaction.error as? SKError)
             case .deferred:
                 state = .purchaseDeferred
             case .purchasing:
