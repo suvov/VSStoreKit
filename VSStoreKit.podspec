@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "VSStoreKit"
-    s.version      = "1.0"
+    s.version      = "1.0.1"
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
     s.summary      = "Simple iOS StoreKit library"
