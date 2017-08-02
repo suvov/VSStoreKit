@@ -88,6 +88,13 @@ public protocol StoreProductsDataSource {
      - returns: Price for product if `productsReceived` is true, nil otherwise.
      */
     func priceForProductWithIdentifier(_ identifier: String) -> NSDecimalNumber?
+    
+    /**
+     Price locale for products returned by the store.
+     
+     - returns: Current price locale for products if `productsReceived` is true, nil otherwise.
+     */
+    func priceLocaleForProducts() -> Locale?
 }
 
 /**

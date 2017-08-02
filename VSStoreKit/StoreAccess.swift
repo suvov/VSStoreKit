@@ -184,6 +184,14 @@ extension StoreAccess: StoreProductsDataSource {
         return nil
     }
     
+    // :nodoc:
+    public func priceLocaleForProducts() -> Locale? {
+        if let product = products?.first {
+            return product.priceLocale
+        }
+        return nil
+    }
+    
     // MARK:
     private func localizedPriceForProduct(_ product: SKProduct) -> String? {
         let formatter = NumberFormatter()
