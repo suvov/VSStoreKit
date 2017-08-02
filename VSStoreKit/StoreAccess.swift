@@ -176,6 +176,14 @@ extension StoreAccess: StoreProductsDataSource {
         return nil
     }
     
+    /// :nodoc:
+    public func priceForProductWithIdentifier(_ identifier: String) -> NSDecimalNumber? {
+        if let product = productWithIdentifier(identifier) {
+            return product.price
+        }
+        return nil
+    }
+    
     // MARK:
     private func localizedPriceForProduct(_ product: SKProduct) -> String? {
         let formatter = NumberFormatter()

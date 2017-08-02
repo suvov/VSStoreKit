@@ -67,7 +67,7 @@ public protocol StoreProductsDataSource {
      
      - parameter identifier: Identifier of a product.
      
-     - returns: Localized price for product if `productsReceived` is true, nil otherwise.
+     - returns: Localized price string for product if `productsReceived` is true, nil otherwise.
      */
     func localizedPriceForProductWithIdentifier(_ identifier: String) -> String?
     
@@ -79,6 +79,15 @@ public protocol StoreProductsDataSource {
      - returns: Localized description for product if `productsReceived` is true, nil otherwise.
      */
     func localizedDescriptionForProductWithIdentifier(_ identifier: String) -> String?
+    
+    /**
+     Price for product with identifier returned by the store.
+     
+     - parameter identifier: Identifier of a product.
+     
+     - returns: Price for product if `productsReceived` is true, nil otherwise.
+     */
+    func priceForProductWithIdentifier(_ identifier: String) -> NSDecimalNumber?
 }
 
 /**
