@@ -12,6 +12,14 @@ import Foundation
 
 class StoreAccessMock: StoreProductsDataSource {
     
+    func priceForProductWithIdentifier(_ identifier: String) -> NSDecimalNumber? {
+        return nil
+    }
+    
+    func priceLocaleForProducts() -> Locale? {
+        return nil
+    }
+    
     var productsReceivedSettable = false
     
     let products: [StoreProduct]
