@@ -8,8 +8,8 @@ VSStoreKit is an easy to use library that you can use to make in-app purchases i
 
 ## Requirements
 
-* Swift 4.2
-* Xcode 10
+* Swift 4
+* Xcode 9
 * iOS 8.0+
 
 ## Installation
