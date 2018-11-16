@@ -17,7 +17,6 @@
 import Foundation
 import VSStoreKit
 
-
 struct PurchasedProducts: PurchasedProductsProtocol {
     
     func isPurchasedProductWithIdentifier(_ identifier:String) -> Bool {

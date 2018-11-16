@@ -9,7 +9,6 @@
 import UIKit
 import VSStoreKit
 
-
 class ViewController: UITableViewController {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -19,7 +18,6 @@ class ViewController: UITableViewController {
     private let purchasedProducts = PurchasedProducts()
     private let storeAccessObserver = StoreAccessObserver()
     private var productsDataSource: ProductsDataSource?
-    
 
     // MARK:
     override func viewDidLoad() {
@@ -31,7 +29,7 @@ class ViewController: UITableViewController {
     }
     
     private func setupProductsDataSource() {
-        productsDataSource = ProductsDataSource(localProducts: localProducts, storeAccess: storeAccess)
+        productsDataSource = ProductsDataSource(localProducts: localProducts, storeProducts: storeAccess)
         tableView.reloadData()
     }
     
@@ -71,6 +69,7 @@ class ViewController: UITableViewController {
         cell.buyButton.tag = indexPath.item
         return cell
     }
+    
     // MARK:
     @IBAction func buyAction(_ sender: UIButton) {
         guard storeAccess.productsReceived else { return } // StoreKit won't allow making purchases until products received

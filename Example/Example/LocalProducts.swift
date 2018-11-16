@@ -15,7 +15,6 @@
 import Foundation
 import VSStoreKit
 
-
 struct LocalProducts: LocalProductsDataSource {
     
     private struct Product {

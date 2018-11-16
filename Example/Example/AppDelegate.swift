@@ -9,16 +9,14 @@
 import UIKit
 import VSStoreKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        StoreAccess.shared.purchaseCompletion = { purchasedProductIdentifier in
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        StoreAccess.shared.purchaseCompletionHandler = { purchasedProductIdentifier in
             PurchasedProducts().markProductAsPurchased(purchasedProductIdentifier)
         }
         return true
