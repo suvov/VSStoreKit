@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "VSStoreKit"
-    s.version      = "1.0.1"
+    s.version      = "1.0.2"
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
     s.summary      = "Simple iOS StoreKit library"
@@ -15,4 +15,5 @@ You can use VSStoreKit to make in-app purchases in iOS app.
     s.source       = { :git => 'https://github.com/suvov/VSStoreKit.git', :tag => s.version.to_s }
     s.source_files = 'VSStoreKit/*.swift'
     s.ios.deployment_target = '8.0'
+    s.swift_version = "4.2"
 end

@@ -48,6 +48,7 @@
 		E7C4D3C91F082FFD00737E8B /* ProductMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMock.swift; sourceTree = "<group>"; };
 		E7C4D3CB1F08304B00737E8B /* PurchasedProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedProducts.swift; sourceTree = "<group>"; };
 		E7C4D3CD1F08306800737E8B /* LocalProductsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProductsMock.swift; sourceTree = "<group>"; };
+		E7DB5C6E219EA049000E6E1F /* VSStoreKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = VSStoreKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		E7B0AD0D1E9BD8ED00C33981 = {
 			isa = PBXGroup;
 			children = (
+				E7DB5C6E219EA049000E6E1F /* VSStoreKit.podspec */,
 				E7B0AD191E9BD8EE00C33981 /* VSStoreKit */,
 				E7B49D071F080BC30008116E /* VSStoreKitTests */,
 				E7B0AD181E9BD8ED00C33981 /* Products */,
@@ -99,8 +101,7 @@
 				E78F5A531EE86E6A0065A5C5 /* VSStoreKit.h */,
 				E78F5A4B1EE86E6A0065A5C5 /* Info.plist */,
 			);
-			name = VSStoreKit;
-			path = VSStore;
+			path = VSStoreKit;
 			sourceTree = "<group>";
 		};
 		E7B49D071F080BC30008116E /* VSStoreKitTests */ = {
@@ -172,19 +173,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Vladimir Shutyuk";
 				TargetAttributes = {
 					E7B0AD161E9BD8ED00C33981 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = FB23C6P69F;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					E7B49D051F080BC30008116E = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FB23C6P69F;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -275,6 +276,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -282,6 +284,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -335,6 +338,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -342,6 +346,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -392,8 +397,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -414,8 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -428,8 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.shookup.VSStoreKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -442,8 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.shookup.VSStoreKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
