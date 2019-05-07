@@ -9,7 +9,6 @@
 import XCTest
 @testable import VSStoreKit
 
-
 class TestProductsDataSource: XCTestCase {
     
     private let localProductsArray = [LocalProduct(name: "Local name 1", identifier:"xyz.suvov.productone", description:"Local description 1"),

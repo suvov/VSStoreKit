@@ -15,5 +15,5 @@ You can use VSStoreKit to make in-app purchases in iOS app.
     s.source       = { :git => 'https://github.com/suvov/VSStoreKit.git', :tag => s.version.to_s }
     s.source_files = 'VSStoreKit/*.swift'
     s.ios.deployment_target = '8.0'
-    s.swift_version = "4.2"
+    s.swift_version = "5.0"
 end

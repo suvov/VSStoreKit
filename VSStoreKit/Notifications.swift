@@ -11,7 +11,7 @@ import Foundation
 
 internal extension Notification.Name {
     
-    internal static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
+    static let storeAccessDidUpdateState = Notification.Name("storeAccessDidUpdateState")
 }
 
 internal let StoreAccessStateUserInfoKey = "StoreAccessStateUserInfoKey"

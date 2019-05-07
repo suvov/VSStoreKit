@@ -120,6 +120,8 @@ public class StoreAccess: NSObject, SKProductsRequestDelegate, SKPaymentTransact
                 state = .purchaseDeferred
             case .purchasing:
                 state = .purchasing
+            @unknown default:
+                state = .unknown
             }
         }
     }
