@@ -98,5 +98,5 @@ Vladimir Shutyuk, vladimir.shutyuk@gmail.com
 VSStoreKit is available under the MIT license. See the LICENSE file for more info.
 
 [img0]:https://raw.githubusercontent.com/suvov/VSStoreKit/master/Icon0.png
-[docsLink]:http://suvov.xyz/VSStoreKit
+[docsLink]:https://suvov.github.io/VSStoreKit
 
